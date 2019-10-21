@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finter", "Finter\Finter.csproj", "{913E1E32-D408-46AE-A4B1-A4D8E0FDF56D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{913E1E32-D408-46AE-A4B1-A4D8E0FDF56D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913E1E32-D408-46AE-A4B1-A4D8E0FDF56D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913E1E32-D408-46AE-A4B1-A4D8E0FDF56D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913E1E32-D408-46AE-A4B1-A4D8E0FDF56D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AACBAEE1-4DDF-4E78-B666-0B541ABB82AF}
+	EndGlobalSection
+EndGlobal
