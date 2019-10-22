@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Finter
 {
-    class Lagrange
+    static class Lagrange
     {
 
         // Calcular polinomio de Lagrange (Lista de puntos(x,y)) => Polinomio
