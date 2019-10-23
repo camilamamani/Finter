@@ -68,15 +68,16 @@ namespace Finter
                 List<Types.Termino> polinomio = new List<Types.Termino>();
                 List<Types.Punto> puntos = new List<Types.Punto>();
                 String polString;
+
                 //Inicializacion
                 puntos.Add(new Types.Punto(1, -2));
                 puntos.Add(new Types.Punto(3, 1));
                 puntos.Add(new Types.Punto(5, 2));
                 puntos.Add(new Types.Punto(7, -3));
+
                 // Armado del polinomio
                 polinomio = Lagrange.CalcPolLagrange(puntos);
-                // Reducir Polinomio Final
-                Util.ReducirPol(polinomio);
+               
                 // Mostrar Polinomio Formateado
                 polString = Util.PolToString(polinomio, "P", "X");
                 textBox2.Text = polString;

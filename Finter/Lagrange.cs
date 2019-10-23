@@ -53,6 +53,9 @@ namespace Finter
                 polinomio.AddRange(li);
             }
 
+            // Reducir Polinomio Final
+            Util.ReducirPol(polinomio);
+
             return polinomio;
         }
 
