@@ -51,7 +51,11 @@ namespace Finter
         // Devuelve un String con el polinomio formateado 
         public static String PolToString(List<Types.Termino> pol, String nombre, String x)
         {
-            String SPol = nombre + "(" + x + ")" + "= ";
+            String SPol = "";
+            
+            if (nombre != "")
+                SPol += nombre + "(" + x + ")" + "= ";
+            
             int i = 0;
             foreach (Types.Termino o in pol)
             {

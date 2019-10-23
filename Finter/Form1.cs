@@ -85,18 +85,31 @@ namespace Finter
 
             //Inicializacion
             double k = Convert.ToDouble(textBox1.Text.Replace(".", ","));
-     
-            switch (comboBox1.SelectedIndex)
+
+            // Habilitar cuadro para mostrar pasos
+            if (checkBox1.Checked)
+            {
+                label7.Visible = true;
+                textBox4.Visible = true;
+            }
+            else
+            {
+                label7.Visible = false;
+                textBox4.Visible = false;
+            }
+
+                switch (comboBox1.SelectedIndex)
             {
                 // Lagrange
                 case 0:
                     List<Types.Termino> polinomio = new List<Types.Termino>();
+                    List<string> pasos = new List<string>();
                     String polString;
                     double valorPol;
                     
 
                     // Armado del polinomio
-                    polinomio = Lagrange.CalcPolLagrange(puntos);
+                    Lagrange.CalcPolLagrange(puntos, polinomio, pasos);
                
                     // Mostrar Polinomio Formateado
                     polString = Util.PolToString(polinomio, "P", "X");
@@ -105,6 +118,9 @@ namespace Finter
                     // Especializar Polinomio
                     valorPol = Util.EspecializarPol(polinomio, k);
                     textBox3.Text = valorPol.ToString();
+
+                    // Mostrar pasos
+                    textBox4.Text = string.Join(Environment.NewLine, pasos);
                     
                     break;
 
