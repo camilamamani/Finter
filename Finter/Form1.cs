@@ -22,16 +22,48 @@ namespace Finter
 
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+                && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int result;
+            if (textBox1.Text != "")
+            {
+                if (!int.TryParse(textBox1.Text, out result))
+                {
+                    textBox1.Text = "";
+                    MessageBox.Show("Invalid Integer");
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             // Limpiar Valores
             textBox2.Text = "";
             textBox3.Text = "";
 
-         
-            if (comboBox1.SelectedItem == "Lagrange")
+            if (comboBox1.SelectedItem == null)
+                MessageBox.Show("Debe seleccionar un tipo de polinomio");
+
+            switch (comboBox1.SelectedIndex)
             {
+                // Lagrange
+                case 0:
                 // Calcular Lagrange
                 List<Types.Termino> polinomio = new List<Types.Termino>();
                 List<Types.Punto> puntos = new List<Types.Punto>();
@@ -48,6 +80,17 @@ namespace Finter
                 // Mostrar Polinomio Formateado
                 polString = Util.PolToString(polinomio, "P", "X");
                 textBox2.Text = polString;
+                    break;
+
+                // Newton-Gregory Progresivo
+                case 1:
+                    Console.WriteLine("NG-Prog");
+                    break;
+
+                // Newton-Gregory Regresivo
+                case 2:
+                    Console.WriteLine("NG-Regr");
+                    break;
             }
          }
     }
