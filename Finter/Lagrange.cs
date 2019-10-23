@@ -48,7 +48,7 @@ namespace Finter
                 li = Util.MultPolPorCte(numLi, (puntos[i].y / denomLi));
                 // Mostrar Li formateado
                 String liString = Util.PolToString(li, "L" + i, "X");
-                Console.WriteLine(liString);
+                //Console.WriteLine(liString);
                 // Agregar Li al Polinomio Final
                 polinomio.AddRange(li);
             }

@@ -85,6 +85,17 @@ namespace Finter
             return SPol;
         }
 
+        // Devuelve el valor al especializar un polinomio
+        public static double EspecializarPol(List<Types.Termino> pol,double k)
+        {
+            double valor = 0;
+
+            foreach(Types.Termino term in pol)
+            {
+                valor += (term.coef * Math.Pow(k, term.grado));
+            }
+            return valor;
+        }
 
     }
 }
