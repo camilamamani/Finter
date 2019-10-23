@@ -57,6 +57,17 @@ namespace Finter
             textBox2.Text = "";
             textBox3.Text = "";
 
+
+            //Inicializacion
+            List<Types.Punto> puntos = new List<Types.Punto>();
+            puntos.Add(new Types.Punto(1, -2));
+            puntos.Add(new Types.Punto(3, 1));
+            puntos.Add(new Types.Punto(5, 2));
+            puntos.Add(new Types.Punto(7, -3));
+
+            if (puntos.Count == 0)
+                MessageBox.Show("No se ingresaron datos");
+
             if (comboBox1.SelectedItem == null)
                 MessageBox.Show("Debe seleccionar un tipo de polinomio");
 
@@ -64,23 +75,16 @@ namespace Finter
             {
                 // Lagrange
                 case 0:
-                // Calcular Lagrange
-                List<Types.Termino> polinomio = new List<Types.Termino>();
-                List<Types.Punto> puntos = new List<Types.Punto>();
-                String polString;
+                    List<Types.Termino> polinomio = new List<Types.Termino>();
+                    String polString;
 
-                //Inicializacion
-                puntos.Add(new Types.Punto(1, -2));
-                puntos.Add(new Types.Punto(3, 1));
-                puntos.Add(new Types.Punto(5, 2));
-                puntos.Add(new Types.Punto(7, -3));
-
-                // Armado del polinomio
-                polinomio = Lagrange.CalcPolLagrange(puntos);
+                    // Armado del polinomio
+                    polinomio = Lagrange.CalcPolLagrange(puntos);
                
-                // Mostrar Polinomio Formateado
-                polString = Util.PolToString(polinomio, "P", "X");
-                textBox2.Text = polString;
+                    // Mostrar Polinomio Formateado
+                    polString = Util.PolToString(polinomio, "P", "X");
+                    textBox2.Text = polString;
+                    
                     break;
 
                 // Newton-Gregory Progresivo
