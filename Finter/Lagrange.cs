@@ -10,9 +10,9 @@ namespace Finter
     {
 
         // Calcular polinomio de Lagrange (Lista de puntos(x,y)) => Polinomio
-        public static void CalcPolLagrange(List<Types.Punto> puntos, List<Types.Termino> polinomio, List<string> pasos)
+        public static void CalcPolLagrange(List<Global.Punto> puntos, List<Global.Termino> polinomio, List<string> pasos)
         {
-            List<Types.Termino> li;
+            List<Global.Termino> li;
             string auxStr1 = "";
             string auxStr2 = "";
             string polString;
@@ -23,8 +23,8 @@ namespace Finter
                 string sNum = "";
                 string sDen = "";
 
-                List<Types.Termino> numLi = new List<Types.Termino>();
-                numLi.Add(new Types.Termino(1, 0));
+                List<Global.Termino> numLi = new List<Global.Termino>();
+                numLi.Add(new Global.Termino(1, 0));
                 double denomLi = 1;
                 for (int j = 0; j < puntos.Count; j++)
                 {
@@ -33,17 +33,17 @@ namespace Finter
                     {
                         // Acumular denominador para dividir a Li
                         denomLi = denomLi * (puntos[i].x - puntos[j].x);
-                        List<Types.Termino> nuevoTermino = new List<Types.Termino>();
-                        nuevoTermino.Add(new Types.Termino(-puntos[j].x, 0));
-                        nuevoTermino.Add(new Types.Termino(1, 1));
+                        List<Global.Termino> nuevoTermino = new List<Global.Termino>();
+                        nuevoTermino.Add(new Global.Termino(-puntos[j].x, 0));
+                        nuevoTermino.Add(new Global.Termino(1, 1));
 
                         // Multiplicar nuevo termino para determinar nuevo Li
-                        List<Types.Termino> numLiParcial = new List<Types.Termino>();
+                        List<Global.Termino> numLiParcial = new List<Global.Termino>();
                         for (int k = 0; k < numLi.Count; k++)
                         {
-                            Types.Termino aux = new Types.Termino(Util.Redondear(numLi[k].coef * nuevoTermino[0].coef), numLi[k].grado + nuevoTermino[0].grado);
+                            Global.Termino aux = new Global.Termino(Util.Redondear(numLi[k].coef * nuevoTermino[0].coef), numLi[k].grado + nuevoTermino[0].grado);
                             numLiParcial.Add(aux);
-                            aux = new Types.Termino(Util.Redondear(numLi[k].coef * nuevoTermino[1].coef), numLi[k].grado + nuevoTermino[1].grado);
+                            aux = new Global.Termino(Util.Redondear(numLi[k].coef * nuevoTermino[1].coef), numLi[k].grado + nuevoTermino[1].grado);
                             numLiParcial.Add(aux);
                         }
 

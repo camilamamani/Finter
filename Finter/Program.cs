@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Finter
 {
+
     static class Program
     {
         /// <summary>
@@ -16,7 +17,7 @@ namespace Finter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormPrincipal());
         }
     }
 }

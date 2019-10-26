@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Finter
 {
@@ -15,16 +16,16 @@ namespace Finter
         }
 
         // Agrupar terminos de igual grado
-        public static void ReducirPol(List<Types.Termino> pol)
+        public static void ReducirPol(List<Global.Termino> pol)
         {
-            List<Types.Termino> polAux = new List<Types.Termino>(pol);
+            List<Global.Termino> polAux = new List<Global.Termino>(pol);
             pol.Clear();
-            foreach (Types.Termino o in polAux)
+            foreach (Global.Termino o in polAux)
             {
                 int index = pol.FindIndex(x => x.grado == o.grado);
                 if (index != -1)
                 {
-                    Types.Termino aux = pol[index];
+                    Global.Termino aux = pol[index];
                     aux.coef += Redondear(o.coef);
                     pol[index] = aux;
                 }
@@ -34,12 +35,12 @@ namespace Finter
         }
 
         // Devuelve otro polinomio multiplicado por un valor constante
-        public static List<Types.Termino> MultPolPorCte(List<Types.Termino> pol, double cte)
+        public static List<Global.Termino> MultPolPorCte(List<Global.Termino> pol, double cte)
         {
-            List<Types.Termino> polOut = new List<Types.Termino>();
-            foreach (Types.Termino o in pol)
+            List<Global.Termino> polOut = new List<Global.Termino>();
+            foreach (Global.Termino o in pol)
             {
-                Types.Termino oAux;
+                Global.Termino oAux;
                 oAux.coef = Redondear(o.coef * cte);
                 oAux.grado = o.grado;
                 polOut.Add(oAux);
@@ -49,7 +50,7 @@ namespace Finter
         }
 
         // Devuelve un String con el polinomio formateado 
-        public static String PolToString(List<Types.Termino> pol, String nombre, String x)
+        public static String PolToString(List<Global.Termino> pol, String nombre, String x)
         {
             String SPol = "";
             
@@ -57,7 +58,7 @@ namespace Finter
                 SPol += nombre + "(" + x + ")" + "= ";
             
             int i = 0;
-            foreach (Types.Termino o in pol)
+            foreach (Global.Termino o in pol)
             {
                 if (i != 0)
                     SPol += " + ";
@@ -90,15 +91,47 @@ namespace Finter
         }
 
         // Devuelve el valor al especializar un polinomio
-        public static double EspecializarPol(List<Types.Termino> pol,double k)
+        public static double EspecializarPol(List<Global.Termino> pol,double k)
         {
             double valor = 0;
 
-            foreach(Types.Termino term in pol)
+            foreach(Global.Termino term in pol)
             {
                 valor += (term.coef * Math.Pow(k, term.grado));
             }
             return valor;
+        }
+
+        public static void onlyNumbersDouble(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+                && e.KeyChar != '.'
+                && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '-'
+             && (sender as TextBox).Text.IndexOf('-') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void onlyNumbersInt(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
     }
