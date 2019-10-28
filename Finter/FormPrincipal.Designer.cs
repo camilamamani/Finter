@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpCargaDatos = new System.Windows.Forms.GroupBox();
+            this.btLimpiarTodosLosPuntos = new System.Windows.Forms.Button();
             this.tbValorX = new System.Windows.Forms.TextBox();
-            this.btVerificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btAgregar = new System.Windows.Forms.Button();
             this.tbValorY = new System.Windows.Forms.TextBox();
@@ -58,7 +58,6 @@
             this.lblPolinomioK = new System.Windows.Forms.Label();
             this.lblPolinomioInterpolante = new System.Windows.Forms.Label();
             this.tbPolinomio = new System.Windows.Forms.TextBox();
-            this.btLimpiarTodosLosPuntos = new System.Windows.Forms.Button();
             this.grpCargaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPuntos)).BeginInit();
             this.grpOpciones.SuspendLayout();
@@ -80,7 +79,6 @@
             // 
             this.grpCargaDatos.Controls.Add(this.btLimpiarTodosLosPuntos);
             this.grpCargaDatos.Controls.Add(this.tbValorX);
-            this.grpCargaDatos.Controls.Add(this.btVerificar);
             this.grpCargaDatos.Controls.Add(this.btEliminar);
             this.grpCargaDatos.Controls.Add(this.btAgregar);
             this.grpCargaDatos.Controls.Add(this.tbValorY);
@@ -94,27 +92,27 @@
             this.grpCargaDatos.TabStop = false;
             this.grpCargaDatos.Text = "Ingrese los datos";
             // 
+            // btLimpiarTodosLosPuntos
+            // 
+            this.btLimpiarTodosLosPuntos.Location = new System.Drawing.Point(389, 205);
+            this.btLimpiarTodosLosPuntos.Name = "btLimpiarTodosLosPuntos";
+            this.btLimpiarTodosLosPuntos.Size = new System.Drawing.Size(207, 23);
+            this.btLimpiarTodosLosPuntos.TabIndex = 14;
+            this.btLimpiarTodosLosPuntos.Text = "Limpiar todos los puntos";
+            this.btLimpiarTodosLosPuntos.UseVisualStyleBackColor = true;
+            this.btLimpiarTodosLosPuntos.Click += new System.EventHandler(this.btLimpiarTodosLosPuntos_Click);
+            // 
             // tbValorX
             // 
-            this.tbValorX.Location = new System.Drawing.Point(410, 13);
+            this.tbValorX.Location = new System.Drawing.Point(410, 19);
             this.tbValorX.Name = "tbValorX";
             this.tbValorX.Size = new System.Drawing.Size(67, 20);
             this.tbValorX.TabIndex = 13;
             this.tbValorX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValorNumerico_KeyPress);
             // 
-            // btVerificar
-            // 
-            this.btVerificar.Location = new System.Drawing.Point(389, 205);
-            this.btVerificar.Name = "btVerificar";
-            this.btVerificar.Size = new System.Drawing.Size(207, 23);
-            this.btVerificar.TabIndex = 12;
-            this.btVerificar.Text = "Verificar puntos";
-            this.btVerificar.UseVisualStyleBackColor = true;
-            this.btVerificar.Click += new System.EventHandler(this.btVerificar_Click);
-            // 
             // btEliminar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(389, 116);
+            this.btEliminar.Location = new System.Drawing.Point(389, 176);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(207, 23);
             this.btEliminar.TabIndex = 11;
@@ -124,7 +122,7 @@
             // 
             // btAgregar
             // 
-            this.btAgregar.Location = new System.Drawing.Point(389, 39);
+            this.btAgregar.Location = new System.Drawing.Point(389, 45);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(207, 23);
             this.btAgregar.TabIndex = 10;
@@ -134,7 +132,7 @@
             // 
             // tbValorY
             // 
-            this.tbValorY.Location = new System.Drawing.Point(529, 12);
+            this.tbValorY.Location = new System.Drawing.Point(529, 19);
             this.tbValorY.Name = "tbValorY";
             this.tbValorY.Size = new System.Drawing.Size(67, 20);
             this.tbValorY.TabIndex = 9;
@@ -143,7 +141,7 @@
             // lblInputY
             // 
             this.lblInputY.AutoSize = true;
-            this.lblInputY.Location = new System.Drawing.Point(505, 15);
+            this.lblInputY.Location = new System.Drawing.Point(505, 22);
             this.lblInputY.Name = "lblInputY";
             this.lblInputY.Size = new System.Drawing.Size(18, 13);
             this.lblInputY.TabIndex = 7;
@@ -152,7 +150,7 @@
             // lblInputX
             // 
             this.lblInputX.AutoSize = true;
-            this.lblInputX.Location = new System.Drawing.Point(386, 16);
+            this.lblInputX.Location = new System.Drawing.Point(386, 22);
             this.lblInputX.Name = "lblInputX";
             this.lblInputX.Size = new System.Drawing.Size(18, 13);
             this.lblInputX.TabIndex = 6;
@@ -213,7 +211,7 @@
             // 
             // btBorrarCalc
             // 
-            this.btBorrarCalc.Location = new System.Drawing.Point(110, 194);
+            this.btBorrarCalc.Location = new System.Drawing.Point(110, 205);
             this.btBorrarCalc.Name = "btBorrarCalc";
             this.btBorrarCalc.Size = new System.Drawing.Size(210, 23);
             this.btBorrarCalc.TabIndex = 7;
@@ -223,7 +221,7 @@
             // 
             // btCalcular
             // 
-            this.btCalcular.Location = new System.Drawing.Point(110, 148);
+            this.btCalcular.Location = new System.Drawing.Point(110, 136);
             this.btCalcular.Name = "btCalcular";
             this.btCalcular.Size = new System.Drawing.Size(210, 23);
             this.btCalcular.TabIndex = 6;
@@ -358,16 +356,6 @@
             this.tbPolinomio.Size = new System.Drawing.Size(543, 20);
             this.tbPolinomio.TabIndex = 0;
             // 
-            // btLimpiarTodosLosPuntos
-            // 
-            this.btLimpiarTodosLosPuntos.Location = new System.Drawing.Point(389, 148);
-            this.btLimpiarTodosLosPuntos.Name = "btLimpiarTodosLosPuntos";
-            this.btLimpiarTodosLosPuntos.Size = new System.Drawing.Size(207, 23);
-            this.btLimpiarTodosLosPuntos.TabIndex = 14;
-            this.btLimpiarTodosLosPuntos.Text = "Limpiar todos los puntos";
-            this.btLimpiarTodosLosPuntos.UseVisualStyleBackColor = true;
-            this.btLimpiarTodosLosPuntos.Click += new System.EventHandler(this.btLimpiarTodosLosPuntos_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,7 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn i;
         private System.Windows.Forms.DataGridViewTextBoxColumn x;
         private System.Windows.Forms.DataGridViewTextBoxColumn y;
-        private System.Windows.Forms.Button btVerificar;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btAgregar;
         private System.Windows.Forms.TextBox tbValorY;

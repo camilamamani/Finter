@@ -9,6 +9,8 @@ namespace Finter
 {
     static class Util
     {
+        public static readonly double PRECISION = 0.01; // 2 digitos
+
         // Redondeo
         public static double Redondear(double x)
         {
@@ -132,6 +134,26 @@ namespace Finter
             {
                 e.Handled = true;
             }
+        }
+
+        public static bool AlteracionValoresInicialesNoModificaPolinomio(List<Global.Termino> polinomioAnterior, List<Global.Punto> puntos)
+        {
+            if (polinomioAnterior.Count > puntos.Count)
+                return false; // Hay terminos del polinomio de mas
+
+            foreach(Global.Punto punto in puntos)
+            {
+                if(!MismosValoresConUnRangoDeError(EspecializarPol(polinomioAnterior, punto.x), punto.y))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private static bool MismosValoresConUnRangoDeError(double v1, double v2)
+        {
+            return Math.Abs(v1 - v2) < PRECISION;
         }
 
     }

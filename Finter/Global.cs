@@ -34,6 +34,7 @@ namespace Finter
             }
 
             public static List<Punto> puntos = new List<Punto>();
+            public static List<Punto> ultimosPuntosUtilizadosParaCalcularPolinomio = new List<Punto>();
             public static List<Termino> polinomio = new List<Termino>();  //[(C0,^0).....(Cn,^n)]
             public static int tipoPol;                                    // 0: Lagrange 1:NG-prog 2:NG-regr
             public static List<string> pasos = new List<string>();

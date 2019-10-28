@@ -25,34 +25,31 @@ namespace Finter
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
-            // Limpiar Valores
-            tbPolinomio.Text = "";
-            tbPolinomioK.Text = "";
-            Global.polinomio.Clear();
-
             // Validaciones
-            Boolean error = false;
-
             if (Global.puntos.Count == 0)
             {
-                error = true;
                 MessageBox.Show("No se ingresaron datos");
             }
-
-            if (cbTipoPol.SelectedItem == null)
+            else if (Global.polinomio.Count > 0
+                && !Global.puntos.SequenceEqual(Global.ultimosPuntosUtilizadosParaCalcularPolinomio) // Hubo cambios en los puntos
+                && Util.AlteracionValoresInicialesNoModificaPolinomio(Global.polinomio, Global.puntos))
             {
-                error = false;
+                MessageBox.Show("La alteracion en los valores iniciales no modifica al polinomio ya generado");
+            }
+            else if (cbTipoPol.SelectedItem == null)
+            {
                 MessageBox.Show("Debe seleccionar un tipo de polinomio");
             }
-
-            if (tbValorK.Text == "") {
-                error = false;
-                MessageBox.Show("Debe ingresar un valor para K");
-                tbValorK.Text = "0";
-            }
-
-            if (!error)
+            else if (tbValorK.Text == "")
             {
+                MessageBox.Show("Debe ingresar un valor para K");
+            }
+            else 
+            {
+                // Limpiar Valores
+                tbPolinomio.Text = "";
+                tbPolinomioK.Text = "";
+                Global.polinomio.Clear();
 
                 //Inicializacion
                 double k = Convert.ToDouble(tbValorK.Text.Replace(".", ","));
@@ -69,7 +66,6 @@ namespace Finter
                     lblPasos.Visible = false;
                     tbPasos.Visible = false;
                 }
-
 
                 // Tipo de Polinomio
                 Global.tipoPol = cbTipoPol.SelectedIndex;
@@ -106,6 +102,8 @@ namespace Finter
                         break;
                 }
 
+                // Me guardo los puntos utilizados para despues analizar si me agregaron o quitaron puntos
+                Global.ultimosPuntosUtilizadosParaCalcularPolinomio = Global.puntos.ToList();
             }
          }
 
