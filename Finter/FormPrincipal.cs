@@ -25,13 +25,13 @@ namespace Finter
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
-
             // Limpiar Valores
             tbPolinomio.Text = "";
             tbPolinomioK.Text = "";
+            Global.polinomio.Clear();
 
             // Validaciones
-            Boolean error=false;
+            Boolean error = false;
 
             if (Global.puntos.Count == 0)
             {
@@ -61,12 +61,12 @@ namespace Finter
                 // Habilitar cuadro para mostrar pasos
                 if (chMostrarPasos.Checked)
                 {
-                    label7.Visible = true;
+                    lblPasos.Visible = true;
                     tbPasos.Visible = true;
                 }
                 else
                 {
-                    label7.Visible = false;
+                    lblPasos.Visible = false;
                     tbPasos.Visible = false;
                 }
 
@@ -169,6 +169,7 @@ namespace Finter
                     Global.puntos.Sort((p1, p2) => p1.x.CompareTo(p2.x));
 
                     gridPuntos.Rows.Clear();
+                    // Vuelvo a agregar los puntos a la UI
                     foreach (Global.Punto p in Global.puntos)
                     {
                         gridPuntos.Rows.Add();
@@ -177,7 +178,6 @@ namespace Finter
                         gridPuntos[1, i].Value = p.x;
                         gridPuntos[2, i].Value = p.y;
                     }
-                    MessageBox.Show("El punto ha sido borrado");
                 }
                 catch
                 {
@@ -213,6 +213,12 @@ namespace Finter
             tbPolinomio.Text = "";
             tbPolinomioK.Text = "";
             tbPasos.Text = "";
+        }
+
+        private void btLimpiarTodosLosPuntos_Click(object sender, EventArgs e)
+        {
+            Global.puntos.Clear();
+            gridPuntos.Rows.Clear();
         }
     }
 

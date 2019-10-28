@@ -29,68 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.grpCargaDatos = new System.Windows.Forms.GroupBox();
             this.tbValorX = new System.Windows.Forms.TextBox();
             this.btVerificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btAgregar = new System.Windows.Forms.Button();
             this.tbValorY = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblInputY = new System.Windows.Forms.Label();
+            this.lblInputX = new System.Windows.Forms.Label();
             this.gridPuntos = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpOpciones = new System.Windows.Forms.GroupBox();
             this.btBorrarCalc = new System.Windows.Forms.Button();
             this.btCalcular = new System.Windows.Forms.Button();
             this.tbValorK = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEspecializarParaK = new System.Windows.Forms.Label();
+            this.lblMostrarPasos = new System.Windows.Forms.Label();
             this.chMostrarPasos = new System.Windows.Forms.CheckBox();
             this.cbTipoPol = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblTipoPolinomio = new System.Windows.Forms.Label();
+            this.grpResultados = new System.Windows.Forms.GroupBox();
             this.tbPasos = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPasos = new System.Windows.Forms.Label();
             this.tbPolinomioK = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPolinomioK = new System.Windows.Forms.Label();
+            this.lblPolinomioInterpolante = new System.Windows.Forms.Label();
             this.tbPolinomio = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.btLimpiarTodosLosPuntos = new System.Windows.Forms.Button();
+            this.grpCargaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPuntos)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpOpciones.SuspendLayout();
+            this.grpResultados.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(408, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Trabajo Práctio Matemática Superior";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(408, 18);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(214, 13);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Trabajo Práctio Matemática Superior";
             // 
-            // groupBox1
+            // grpCargaDatos
             // 
-            this.groupBox1.Controls.Add(this.tbValorX);
-            this.groupBox1.Controls.Add(this.btVerificar);
-            this.groupBox1.Controls.Add(this.btEliminar);
-            this.groupBox1.Controls.Add(this.btAgregar);
-            this.groupBox1.Controls.Add(this.tbValorY);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.gridPuntos);
-            this.groupBox1.Location = new System.Drawing.Point(26, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(606, 243);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingrese los datos";
+            this.grpCargaDatos.Controls.Add(this.btLimpiarTodosLosPuntos);
+            this.grpCargaDatos.Controls.Add(this.tbValorX);
+            this.grpCargaDatos.Controls.Add(this.btVerificar);
+            this.grpCargaDatos.Controls.Add(this.btEliminar);
+            this.grpCargaDatos.Controls.Add(this.btAgregar);
+            this.grpCargaDatos.Controls.Add(this.tbValorY);
+            this.grpCargaDatos.Controls.Add(this.lblInputY);
+            this.grpCargaDatos.Controls.Add(this.lblInputX);
+            this.grpCargaDatos.Controls.Add(this.gridPuntos);
+            this.grpCargaDatos.Location = new System.Drawing.Point(26, 52);
+            this.grpCargaDatos.Name = "grpCargaDatos";
+            this.grpCargaDatos.Size = new System.Drawing.Size(606, 243);
+            this.grpCargaDatos.TabIndex = 1;
+            this.grpCargaDatos.TabStop = false;
+            this.grpCargaDatos.Text = "Ingrese los datos";
             // 
             // tbValorX
             // 
@@ -116,7 +118,7 @@
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(207, 23);
             this.btEliminar.TabIndex = 11;
-            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.Text = "Eliminar punto";
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
@@ -126,7 +128,7 @@
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(207, 23);
             this.btAgregar.TabIndex = 10;
-            this.btAgregar.Text = "Agregar";
+            this.btAgregar.Text = "Agregar punto";
             this.btAgregar.UseVisualStyleBackColor = true;
             this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
@@ -138,23 +140,23 @@
             this.tbValorY.TabIndex = 9;
             this.tbValorY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValorNumerico_KeyPress);
             // 
-            // label9
+            // lblInputY
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(505, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(18, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "y=";
+            this.lblInputY.AutoSize = true;
+            this.lblInputY.Location = new System.Drawing.Point(505, 15);
+            this.lblInputY.Name = "lblInputY";
+            this.lblInputY.Size = new System.Drawing.Size(18, 13);
+            this.lblInputY.TabIndex = 7;
+            this.lblInputY.Text = "y=";
             // 
-            // label8
+            // lblInputX
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(386, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "x=";
+            this.lblInputX.AutoSize = true;
+            this.lblInputX.Location = new System.Drawing.Point(386, 16);
+            this.lblInputX.Name = "lblInputX";
+            this.lblInputX.Size = new System.Drawing.Size(18, 13);
+            this.lblInputX.TabIndex = 6;
+            this.lblInputX.Text = "x=";
             // 
             // gridPuntos
             // 
@@ -192,22 +194,22 @@
             this.y.Name = "y";
             this.y.ReadOnly = true;
             // 
-            // groupBox2
+            // grpOpciones
             // 
-            this.groupBox2.Controls.Add(this.btBorrarCalc);
-            this.groupBox2.Controls.Add(this.btCalcular);
-            this.groupBox2.Controls.Add(this.tbValorK);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.chMostrarPasos);
-            this.groupBox2.Controls.Add(this.cbTipoPol);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(638, 52);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 243);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Opciones";
+            this.grpOpciones.Controls.Add(this.btBorrarCalc);
+            this.grpOpciones.Controls.Add(this.btCalcular);
+            this.grpOpciones.Controls.Add(this.tbValorK);
+            this.grpOpciones.Controls.Add(this.lblEspecializarParaK);
+            this.grpOpciones.Controls.Add(this.lblMostrarPasos);
+            this.grpOpciones.Controls.Add(this.chMostrarPasos);
+            this.grpOpciones.Controls.Add(this.cbTipoPol);
+            this.grpOpciones.Controls.Add(this.lblTipoPolinomio);
+            this.grpOpciones.Location = new System.Drawing.Point(638, 52);
+            this.grpOpciones.Name = "grpOpciones";
+            this.grpOpciones.Size = new System.Drawing.Size(360, 243);
+            this.grpOpciones.TabIndex = 2;
+            this.grpOpciones.TabStop = false;
+            this.grpOpciones.Text = "Opciones";
             // 
             // btBorrarCalc
             // 
@@ -238,23 +240,23 @@
             this.tbValorK.Text = "0";
             this.tbValorK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValorNumerico_KeyPress);
             // 
-            // label4
+            // lblEspecializarParaK
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Especializar para K=";
+            this.lblEspecializarParaK.AutoSize = true;
+            this.lblEspecializarParaK.Location = new System.Drawing.Point(43, 103);
+            this.lblEspecializarParaK.Name = "lblEspecializarParaK";
+            this.lblEspecializarParaK.Size = new System.Drawing.Size(103, 13);
+            this.lblEspecializarParaK.TabIndex = 4;
+            this.lblEspecializarParaK.Text = "Especializar para K=";
             // 
-            // label3
+            // lblMostrarPasos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mostrar pasos";
+            this.lblMostrarPasos.AutoSize = true;
+            this.lblMostrarPasos.Location = new System.Drawing.Point(73, 72);
+            this.lblMostrarPasos.Name = "lblMostrarPasos";
+            this.lblMostrarPasos.Size = new System.Drawing.Size(73, 13);
+            this.lblMostrarPasos.TabIndex = 3;
+            this.lblMostrarPasos.Text = "Mostrar pasos";
             // 
             // chMostrarPasos
             // 
@@ -277,29 +279,29 @@
             this.cbTipoPol.Size = new System.Drawing.Size(168, 21);
             this.cbTipoPol.TabIndex = 1;
             // 
-            // label2
+            // lblTipoPolinomio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tipo de polinomio";
+            this.lblTipoPolinomio.AutoSize = true;
+            this.lblTipoPolinomio.Location = new System.Drawing.Point(56, 39);
+            this.lblTipoPolinomio.Name = "lblTipoPolinomio";
+            this.lblTipoPolinomio.Size = new System.Drawing.Size(90, 13);
+            this.lblTipoPolinomio.TabIndex = 0;
+            this.lblTipoPolinomio.Text = "Tipo de polinomio";
             // 
-            // groupBox3
+            // grpResultados
             // 
-            this.groupBox3.Controls.Add(this.tbPasos);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.tbPolinomioK);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.tbPolinomio);
-            this.groupBox3.Location = new System.Drawing.Point(26, 301);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(972, 383);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Resultados";
+            this.grpResultados.Controls.Add(this.tbPasos);
+            this.grpResultados.Controls.Add(this.lblPasos);
+            this.grpResultados.Controls.Add(this.tbPolinomioK);
+            this.grpResultados.Controls.Add(this.lblPolinomioK);
+            this.grpResultados.Controls.Add(this.lblPolinomioInterpolante);
+            this.grpResultados.Controls.Add(this.tbPolinomio);
+            this.grpResultados.Location = new System.Drawing.Point(26, 301);
+            this.grpResultados.Name = "grpResultados";
+            this.grpResultados.Size = new System.Drawing.Size(972, 383);
+            this.grpResultados.TabIndex = 3;
+            this.grpResultados.TabStop = false;
+            this.grpResultados.Text = "Resultados";
             // 
             // tbPasos
             // 
@@ -312,15 +314,15 @@
             this.tbPasos.TabIndex = 5;
             this.tbPasos.Visible = false;
             // 
-            // label7
+            // lblPasos
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Pasos";
-            this.label7.Visible = false;
+            this.lblPasos.AutoSize = true;
+            this.lblPasos.Location = new System.Drawing.Point(6, 70);
+            this.lblPasos.Name = "lblPasos";
+            this.lblPasos.Size = new System.Drawing.Size(36, 13);
+            this.lblPasos.TabIndex = 4;
+            this.lblPasos.Text = "Pasos";
+            this.lblPasos.Visible = false;
             // 
             // tbPolinomioK
             // 
@@ -330,23 +332,23 @@
             this.tbPolinomioK.Size = new System.Drawing.Size(100, 20);
             this.tbPolinomioK.TabIndex = 3;
             // 
-            // label6
+            // lblPolinomioK
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(697, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "P(K)=";
+            this.lblPolinomioK.AutoSize = true;
+            this.lblPolinomioK.Location = new System.Drawing.Point(697, 30);
+            this.lblPolinomioK.Name = "lblPolinomioK";
+            this.lblPolinomioK.Size = new System.Drawing.Size(33, 13);
+            this.lblPolinomioK.TabIndex = 2;
+            this.lblPolinomioK.Text = "P(K)=";
             // 
-            // label5
+            // lblPolinomioInterpolante
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Polinomio interpolante";
+            this.lblPolinomioInterpolante.AutoSize = true;
+            this.lblPolinomioInterpolante.Location = new System.Drawing.Point(6, 29);
+            this.lblPolinomioInterpolante.Name = "lblPolinomioInterpolante";
+            this.lblPolinomioInterpolante.Size = new System.Drawing.Size(110, 13);
+            this.lblPolinomioInterpolante.TabIndex = 1;
+            this.lblPolinomioInterpolante.Text = "Polinomio interpolante";
             // 
             // tbPolinomio
             // 
@@ -356,26 +358,36 @@
             this.tbPolinomio.Size = new System.Drawing.Size(543, 20);
             this.tbPolinomio.TabIndex = 0;
             // 
+            // btLimpiarTodosLosPuntos
+            // 
+            this.btLimpiarTodosLosPuntos.Location = new System.Drawing.Point(389, 148);
+            this.btLimpiarTodosLosPuntos.Name = "btLimpiarTodosLosPuntos";
+            this.btLimpiarTodosLosPuntos.Size = new System.Drawing.Size(207, 23);
+            this.btLimpiarTodosLosPuntos.TabIndex = 14;
+            this.btLimpiarTodosLosPuntos.Text = "Limpiar todos los puntos";
+            this.btLimpiarTodosLosPuntos.UseVisualStyleBackColor = true;
+            this.btLimpiarTodosLosPuntos.Click += new System.EventHandler(this.btLimpiarTodosLosPuntos_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 696);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpResultados);
+            this.Controls.Add(this.grpOpciones);
+            this.Controls.Add(this.grpCargaDatos);
+            this.Controls.Add(this.lblTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrincipal";
             this.Text = "Finter";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpCargaDatos.ResumeLayout(false);
+            this.grpCargaDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPuntos)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grpOpciones.ResumeLayout(false);
+            this.grpOpciones.PerformLayout();
+            this.grpResultados.ResumeLayout(false);
+            this.grpResultados.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,21 +395,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.GroupBox grpCargaDatos;
+        private System.Windows.Forms.GroupBox grpOpciones;
         private System.Windows.Forms.Button btCalcular;
         private System.Windows.Forms.TextBox tbValorK;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEspecializarParaK;
+        private System.Windows.Forms.Label lblMostrarPasos;
         private System.Windows.Forms.CheckBox chMostrarPasos;
         private System.Windows.Forms.ComboBox cbTipoPol;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTipoPolinomio;
+        private System.Windows.Forms.GroupBox grpResultados;
+        private System.Windows.Forms.Label lblPasos;
         private System.Windows.Forms.TextBox tbPolinomioK;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPolinomioK;
+        private System.Windows.Forms.Label lblPolinomioInterpolante;
         private System.Windows.Forms.TextBox tbPolinomio;
         private System.Windows.Forms.DataGridView gridPuntos;
         private System.Windows.Forms.TextBox tbPasos;
@@ -408,10 +420,11 @@
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btAgregar;
         private System.Windows.Forms.TextBox tbValorY;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblInputY;
+        private System.Windows.Forms.Label lblInputX;
         private System.Windows.Forms.TextBox tbValorX;
         private System.Windows.Forms.Button btBorrarCalc;
+        private System.Windows.Forms.Button btLimpiarTodosLosPuntos;
     }
 }
 
