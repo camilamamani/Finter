@@ -25,13 +25,13 @@ namespace Finter
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
-
             // Limpiar Valores
             tbPolinomio.Text = "";
             tbPolinomioK.Text = "";
+            Global.polinomio.Clear();
 
             // Validaciones
-            Boolean error=false;
+            Boolean error = false;
 
             if (Global.puntos.Count == 0)
             {

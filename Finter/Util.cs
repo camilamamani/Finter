@@ -91,7 +91,7 @@ namespace Finter
         }
 
         // Devuelve el valor al especializar un polinomio
-        public static double EspecializarPol(List<Global.Termino> pol,double k)
+        public static double EspecializarPol(List<Global.Termino> pol, double k)
         {
             double valor = 0;
 
