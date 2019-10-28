@@ -14,7 +14,7 @@ namespace Finter
         // Redondeo
         public static double Redondear(double x)
         {
-            return Math.Round(x, 2, MidpointRounding.ToEven);
+            return Math.Round(x, 7, MidpointRounding.ToEven);
         }
 
         // Agrupar terminos de igual grado
