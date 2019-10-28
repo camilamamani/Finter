@@ -61,12 +61,12 @@ namespace Finter
                 // Habilitar cuadro para mostrar pasos
                 if (chMostrarPasos.Checked)
                 {
-                    label7.Visible = true;
+                    lblPasos.Visible = true;
                     tbPasos.Visible = true;
                 }
                 else
                 {
-                    label7.Visible = false;
+                    lblPasos.Visible = false;
                     tbPasos.Visible = false;
                 }
 
