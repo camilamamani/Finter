@@ -58,6 +58,7 @@
             this.lblPolinomioK = new System.Windows.Forms.Label();
             this.lblPolinomioInterpolante = new System.Windows.Forms.Label();
             this.tbPolinomio = new System.Windows.Forms.TextBox();
+            this.btLimpiarTodosLosPuntos = new System.Windows.Forms.Button();
             this.grpCargaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPuntos)).BeginInit();
             this.grpOpciones.SuspendLayout();
@@ -77,6 +78,7 @@
             // 
             // grpCargaDatos
             // 
+            this.grpCargaDatos.Controls.Add(this.btLimpiarTodosLosPuntos);
             this.grpCargaDatos.Controls.Add(this.tbValorX);
             this.grpCargaDatos.Controls.Add(this.btVerificar);
             this.grpCargaDatos.Controls.Add(this.btEliminar);
@@ -116,7 +118,7 @@
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(207, 23);
             this.btEliminar.TabIndex = 11;
-            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.Text = "Eliminar punto";
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
@@ -126,7 +128,7 @@
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(207, 23);
             this.btAgregar.TabIndex = 10;
-            this.btAgregar.Text = "Agregar";
+            this.btAgregar.Text = "Agregar punto";
             this.btAgregar.UseVisualStyleBackColor = true;
             this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
@@ -356,6 +358,16 @@
             this.tbPolinomio.Size = new System.Drawing.Size(543, 20);
             this.tbPolinomio.TabIndex = 0;
             // 
+            // btLimpiarTodosLosPuntos
+            // 
+            this.btLimpiarTodosLosPuntos.Location = new System.Drawing.Point(389, 148);
+            this.btLimpiarTodosLosPuntos.Name = "btLimpiarTodosLosPuntos";
+            this.btLimpiarTodosLosPuntos.Size = new System.Drawing.Size(207, 23);
+            this.btLimpiarTodosLosPuntos.TabIndex = 14;
+            this.btLimpiarTodosLosPuntos.Text = "Limpiar todos los puntos";
+            this.btLimpiarTodosLosPuntos.UseVisualStyleBackColor = true;
+            this.btLimpiarTodosLosPuntos.Click += new System.EventHandler(this.btLimpiarTodosLosPuntos_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +424,7 @@
         private System.Windows.Forms.Label lblInputX;
         private System.Windows.Forms.TextBox tbValorX;
         private System.Windows.Forms.Button btBorrarCalc;
+        private System.Windows.Forms.Button btLimpiarTodosLosPuntos;
     }
 }
 
