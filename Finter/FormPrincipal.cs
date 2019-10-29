@@ -93,7 +93,30 @@ namespace Finter
 
                     // Newton-Gregory Progresivo
                     case 1:
-                        Console.WriteLine("NG-Prog");
+                        List<Double> xs = new List<double>();
+                        List<Double> ys = new List<double>();
+                        foreach (Global.Punto p in Global.puntos) {
+                            xs.Add(p.x);
+                            ys.Add(p.y);
+                        }
+                        int orden = Global.puntos.Count() - 1;
+                        Newton newton = new Newton(orden, xs, ys);
+                        newton.CalcElements(ys, orden, 1);
+
+                        // Armado del polinomio
+                        newton.CalcPolNewton(Global.polinomio, Global.pasos);
+
+                        // Mostrar Polinomio Formateado
+                        polString = Util.PolToString(Global.polinomio, "P", "x");
+                        tbPolinomio.Text = polString;
+
+                        // Especializar Polinomio
+                        Global.valorPol = newton.Interpolate(k);
+                        tbPolinomioK.Text = Global.valorPol.ToString();
+
+                        // Mostrar pasos
+                        tbPasos.Text = string.Join(Environment.NewLine, Global.pasos);
+
                         break;
 
                     // Newton-Gregory Regresivo
