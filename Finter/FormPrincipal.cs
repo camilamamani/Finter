@@ -100,7 +100,7 @@ namespace Finter
                             ys.Add(p.y);
                         }
                         int orden = Global.puntos.Count() - 1;
-                        Newton newton = new Newton(orden, xs, ys);
+                        Newton newton = new Newton(orden, true,  xs, ys);
                         newton.CalcElements(ys, orden, 1);
 
                         // Armado del polinomio
@@ -121,7 +121,31 @@ namespace Finter
 
                     // Newton-Gregory Regresivo
                     case 2:
-                        Console.WriteLine("NG-Regr");
+                        List<Double> x = new List<double>();
+                        List<Double> y = new List<double>();
+                        foreach (Global.Punto p in Global.puntos)
+                        {
+                            x.Add(p.x);
+                            y.Add(p.y);
+                        }
+                        int order = Global.puntos.Count() - 1;
+                        Newton newt = new Newton(order, false, x, y);
+                        newt.CalcElements(y, order, 1);
+
+                        // Armado del polinomio
+                        newt.CalcPolNewton(Global.polinomio, Global.pasos);
+
+                        // Mostrar Polinomio Formateado
+                        polString = Util.PolToString(Global.polinomio, "P", "x");
+                        tbPolinomio.Text = polString;
+
+                        // Especializar Polinomio
+                        Global.valorPol = newt.Interpolate(k);
+                        tbPolinomioK.Text = Global.valorPol.ToString();
+
+                        // Mostrar pasos
+                        tbPasos.Text = string.Join(Environment.NewLine, Global.pasos);
+
                         break;
                 }
 
@@ -241,6 +265,7 @@ namespace Finter
             Global.puntos.Clear();
             gridPuntos.Rows.Clear();
         }
+
     }
 
 }

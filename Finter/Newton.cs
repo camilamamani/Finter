@@ -9,14 +9,15 @@ namespace Finter
     class Newton
     {
         private int orden;
-   
+        private bool progresivo; //true progresivo, false regresivo
         private List<Double> x_k;//lista de valores de x
         private List<Double> y_k;//lista de valores de y
-        private List<Double> b; //los valores que uso para newton progresivo
+        private List<Double> b; 
 
 
-        public Newton(int order, List<Double> xs, List<Double> ys) {
+        public Newton(int order, bool progr,  List<Double> xs, List<Double> ys) {
             orden = order;
+            progresivo = progr;
             x_k = xs;
             y_k = ys;
             b = new List<double>();
@@ -31,13 +32,18 @@ namespace Finter
             {
                 xx = new List<double>();//f[xi, ..., xi+n]
                 double diferencia;
-                for (i = 0; i < order - 1; i++)
+                
+                for (i = 0; i < order; i++)
                 {
                     diferencia = (y.ElementAt(i+1) - y.ElementAt(i)) / (x_k.ElementAt(i+step) - x_k.ElementAt(i));
                     xx.Add(diferencia);
                 }
-                b.Insert(step - 1, y.ElementAt(0));//newton progresivo
-                Console.WriteLine("b --> " + y.ElementAt(0));
+
+                if(progresivo)
+                    b.Insert(step - 1, y.ElementAt(0));//newton progresivo
+                else
+                    b.Insert(step - 1, y.ElementAt( y.Count() -1 ));//newton regresivo
+
                 CalcElements(xx, order - 1, step + 1);
             }
         }
@@ -53,8 +59,12 @@ namespace Finter
                 tempYp = b.ElementAt(i);
                 for (j = 0; j < i; j++)
                 {
-                    tempYp = tempYp * (k - x_k.ElementAt(j));
+                    if(progresivo)
+                        tempYp = tempYp * (k - x_k.ElementAt(j));
+                    else
+                        tempYp = tempYp * (k - x_k.ElementAt( x_k.Count() - 1 - j ));
                 }
+
                 yp = yp + tempYp;
             }
             return b.ElementAt(0) + yp;
@@ -78,11 +88,17 @@ namespace Finter
                 terms.Add(new Global.Termino(b.ElementAt(i), 0));
                 for (j = 0; j < i; j++)
                 {
-                    aux1 += "* (x - (" + x_k.ElementAt(j) + "))"; //pasos string
-
                     List<Global.Termino> newTerm = new List<Global.Termino>(); //Termino (x - xi)
                     newTerm.Add(new Global.Termino(1, 1)); // x 
-                    newTerm.Add(new Global.Termino(-x_k.ElementAt(j), 0)); // -xi
+
+                    if (progresivo) {
+                        aux1 += "* (x - (" + x_k.ElementAt(j) + "))"; //pasos string
+                        newTerm.Add(new Global.Termino(-x_k.ElementAt(j), 0)); // -xi
+                    }
+                    else {
+                        aux1 += "* (x - (" + x_k.ElementAt(x_k.Count() - 1 - j) + "))"; //pasos string
+                        newTerm.Add(new Global.Termino(-x_k.ElementAt(x_k.Count() - 1 - j), 0)); // -xi
+                    }
 
                     List<Global.Termino> terminosParciales = new List<Global.Termino>();
                     for (int k = 0; k < terms.Count; k++)
