@@ -50,6 +50,8 @@ namespace Finter
                 tbPolinomio.Text = "";
                 tbPolinomioK.Text = "";
                 Global.polinomio.Clear();
+                Global.pasos.Clear();
+                Global.valorPol = 0;
 
                 //Inicializacion
                 double k = Convert.ToDouble(tbValorK.Text.Replace(".", ","));
